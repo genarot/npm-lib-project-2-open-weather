@@ -1,1 +1,6 @@
 node_nodules/
+package-lock.json
+lib/
+test/
+test-library.js
+.gitignore
