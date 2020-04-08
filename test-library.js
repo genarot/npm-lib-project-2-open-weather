@@ -1,32 +1,33 @@
-const m = require('./dist/index')
+const m = require('./dist/index');
 
-const instance = new m.ApiService('ea3a2e3b4b38941604bc75f61d41ea48', 'en','m')
+const instance = new m.ApiService('<APIKEY>', 'en', 'm');
 
+// Searching by Name
 instance.searchByName('Chinandega')
-.then(result=> {
-    console.log('resultado',result)
-})
-.catch(_err => {
-    console.log('error', _err)
-})
+    .then(result => {
+        console.log('result', result)
+    })
+    .catch(_err => {
+        console.log('error', _err)
+    });
 
 
 // Searching by GeoLocalization
-// Chinandega, Nicaragua
-// instance.searchByGeoLocalization({lat: 12.6275729, lon:-87.1348292})
-//     .then(result=> {
-//         console.log('resultado geo \n',result)
-//     })
-//     .catch(_err => {
-//         console.log('error', _err)
-//     })
+// Chinandega, Nicaragua coordinates
+instance.searchByGeoLocalization({lat: 12.6275729, lon: -87.1348292})
+    .then(result => {
+        console.log('result geo \n', result)
+    })
+    .catch(_err => {
+        console.log('error', _err)
+    });
 
 // Searching by postal code
 // Ezcazu Costa rica
-// instance.searchByZipCode('10201','cr')
-//     .then(result=> {
-//         console.log('resultado geo \n',result)
-//     })
-//     .catch(_err => {
-//         console.log('error', _err)
-//     })
+instance.searchByZipCode('10201', 'cr')
+    .then(result => {
+        console.log('result geo \n', result)
+    })
+    .catch(_err => {
+        console.log('error', _err)
+    });

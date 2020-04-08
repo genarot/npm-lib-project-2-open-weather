@@ -1,19 +1,25 @@
 # Openweathermap API library Instructions
 
+## Installation
+
+We must to follow the below instruction
+```shell script
+    npm install <package>
+```
+
 ## Use
 
-
-### How to add
+### How to import the library
 ```js
-const lib = require('module');
+const lib = require('<package>');
 ```
 ```typescript
-import lib from 'module'
+import lib from '<package>'
 ```
 
 ### How to use it
 
-* Get the weather by City Name
+* Search current weather by City Name
 ```js
 const instance = new lib.ApiService('ea3a2e3b4b38941604bc75f61d41ea48', 'en','m')
 
@@ -24,10 +30,29 @@ const instance = new lib.ApiService('ea3a2e3b4b38941604bc75f61d41ea48', 'en','m'
  .catch(_err => {
      console.log('error', _err)
  })
-
-// You'll have a response like this
 ```
-```json
+* Search current weather by GeoLocalization
+```js
+const instance = new lib.ApiService('ea3a2e3b4b38941604bc75f61d41ea48', 'en','m')
+
+ instance.searchByName('Chinandega')
+ .then(result=> {
+     console.log('result',result)
+ })
+```
+
+* Search current weather by Zip code
+```js
+const instance = new lib.ApiService('ea3a2e3b4b38941604bc75f61d41ea48', 'en','m')
+
+ instance.searchByName('Chinandega')
+ .then(result=> {
+     console.log('result',result)
+ })
+```
+
+All the methods will have a reponse like this
+```javascript
 {
   coord: { lon: -87.13, lat: 12.63 },
   weather: [
@@ -63,5 +88,4 @@ const instance = new lib.ApiService('ea3a2e3b4b38941604bc75f61d41ea48', 'en','m'
   name: "Chinandega",
   cod: 200
 }
-
 ```
