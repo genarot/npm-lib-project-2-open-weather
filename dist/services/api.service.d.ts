@@ -31,4 +31,5 @@ export declare class ApiService {
      * @param country {?string}
      */
     searchByZipCode(zip: string, country?: string): Promise<APIResponse>;
+    requestAPI(filters: string): Promise<APIResponse>;
 }

@@ -51,7 +51,6 @@ class ApiService {
      */
     searchByName(name, countryCode = '') {
         return __awaiter(this, void 0, void 0, function* () {
-            let params = `${this.units}${this.lang}&appid=${this.APIKEY}`;
             let filter = '';
             if (countryCode) {
                 filter = `q=${name},${countryCode}`;
@@ -59,10 +58,7 @@ class ApiService {
             else {
                 filter = `q=${name}`;
             }
-            // API call
-            const url = `${constants_1.CURRENT}${filter}${params}`;
-            const result = yield axios_service_1.default.get(url);
-            return result.data;
+            return this.requestAPI(filter);
         });
     }
     // To search by coordinates
@@ -72,7 +68,6 @@ class ApiService {
      */
     searchByGeoLocalization(localization) {
         return __awaiter(this, void 0, void 0, function* () {
-            let params = `${this.units}${this.lang}&appid=${this.APIKEY}`;
             let filter = '';
             if (!localization === undefined || localization === null) {
                 filter = `lat=12.265549&lon=-86.5802491`;
@@ -81,10 +76,7 @@ class ApiService {
             else {
                 filter = `lat=${localization.lat}&lon=${localization.lon}`;
             }
-            // API call
-            const url = `${constants_1.CURRENT}${filter}${params}`;
-            const result = yield axios_service_1.default.get(url);
-            return result.data;
+            return this.requestAPI(filter);
         });
     }
     // To search by zip code
@@ -95,7 +87,6 @@ class ApiService {
      */
     searchByZipCode(zip, country) {
         return __awaiter(this, void 0, void 0, function* () {
-            let params = `${this.units}${this.lang}&appid=${this.APIKEY}`;
             let filter = '';
             if (!country) {
                 filter = `zip=${zip}`;
@@ -103,8 +94,14 @@ class ApiService {
             else {
                 filter = `zip=${zip},${country}`;
             }
+            return this.requestAPI(filter);
+        });
+    }
+    requestAPI(filters) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let params = `${this.units}${this.lang}&appid=${this.APIKEY}`;
             // API call
-            const url = `${constants_1.CURRENT}${filter}${params}`;
+            const url = `${constants_1.CURRENT}${filters}${params}`;
             const result = yield axios_service_1.default.get(url);
             return result.data;
         });
