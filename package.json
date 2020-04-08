@@ -2,7 +2,8 @@
   "name": "gtinoco-project-2-open-weather",
   "version": "1.0.0",
   "description": "Open weather map API",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "mocha",
     "watch": "tsc --watch"
