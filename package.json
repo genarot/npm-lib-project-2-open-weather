@@ -1,6 +1,6 @@
 {
   "name": "gtinoco-project-2-open-weather",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open weather map API",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
