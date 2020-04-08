@@ -1,0 +1,35 @@
+{
+  "name": "gtinoco-project-2-open-weather",
+  "version": "1.0.0",
+  "description": "Open weather map API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genarot/npm-lib-project-2-open-weather.git"
+  },
+  "keywords": [
+    "open",
+    "weather",
+    "API",
+    "nodejs"
+  ],
+  "author": "Genaro Tinoco <genaro_13@hotmail.es>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/genarot/npm-lib-project-2-open-weather/issues"
+  },
+  "homepage": "https://github.com/genarot/npm-lib-project-2-open-weather#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "nock": "^12.0.3"
+  }
+}
